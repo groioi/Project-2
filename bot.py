@@ -78,7 +78,7 @@ def checking(message):
     number_phone = ''.join(number_phone)
 
     user_id = message.chat.id
-    result =  sql.execute(f"SELECT * FROM subscriptions  WHERE user_id = '{user_id}'").fetchall()
+    result =  sql.execute(f"SELECT * FROM subscriptions  WHERE user_id = {user_id}").fetchall()
     db.commit()
 
     phone_db = result[0][3]
